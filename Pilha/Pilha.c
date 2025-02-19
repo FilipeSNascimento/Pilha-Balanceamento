@@ -1,7 +1,7 @@
 #include "Pilha.h"
 
 // Variáveis
-int pilha[TAMANHO];
+char pilha[TAMANHO];
 int posicao = 0;
 
 // Funções
@@ -9,20 +9,24 @@ bool estaCheia() {
     return posicao == TAMANHO;
 }
 
-bool push(int valor) {
+bool push(char caracter) {
     if (estaCheia()) {
         return false;
     }
-    pilha[posicao] = valor;
+    pilha[posicao] = caracter;
     posicao++;
     return true;
 }
 
-bool pop(int *valor) {
+bool pop(char *caracter) {
     if (posicao == 0) {
         return false;
     }
     posicao--;
-    *valor = pilha[posicao];
+    *caracter = pilha[posicao];
     return true;
+}
+
+void EstouVazia(){
+    
 }
